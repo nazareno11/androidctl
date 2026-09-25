@@ -6,11 +6,11 @@ display_info() {
     echo "=== INFORMACIÓN DE PANTALLA ==="
     echo
 
-    $RISH -c "wm size"
+    run_rish "wm size"
 
     echo
 
-    $RISH -c "wm density"
+    run_rish "wm density"
 
     echo
     read -p "Presioná Enter para continuar..."
@@ -23,7 +23,7 @@ display_brightness() {
     echo
 
     echo "Brillo actual:"
-    $RISH -c "settings get system screen_brightness"
+    run_rish "settings get system screen_brightness"
 
     echo
     read -p "Presioná Enter para continuar..."

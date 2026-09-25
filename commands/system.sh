@@ -7,19 +7,19 @@ system_info() {
     echo
 
     echo "Modelo:"
-    $RISH -c "getprop ro.product.model"
+    run_rish "getprop ro.product.model"
 
     echo
     echo "Fabricante:"
-    $RISH -c "getprop ro.product.manufacturer"
+    run_rish "getprop ro.product.manufacturer"
 
     echo
     echo "Android:"
-    $RISH -c "getprop ro.build.version.release"
+    run_rish "getprop ro.build.version.release"
 
     echo
     echo "SDK:"
-    $RISH -c "getprop ro.build.version.sdk"
+    run_rish "getprop ro.build.version.sdk"
 
     echo
     read -p "Presioná Enter para continuar..."

@@ -1,27 +1,45 @@
 #!/bin/bash
 
 lock_screen() {
-    $RISH -c "input keyevent 26"
+    clear
+
+    echo "=== BLOQUEAR PANTALLA ==="
+    echo
+
+    run_rish "input keyevent 26"
+
+    echo "Pantalla bloqueada."
+    sleep 2
 }
 
 reboot_device() {
-    echo
-    read -p "¿Reiniciar el teléfono? [s/N]: " confirmar
+    clear
 
-    if [[ "$confirmar" == "s" || "$confirmar" == "S" ]]; then
-        echo "Reiniciando..."
-        sleep 1
-        $RISH -c "reboot"
+    echo "=== REINICIAR TELÉFONO ==="
+    echo
+
+    read -p "¿Seguro que querés reiniciar? [s/N]: " confirm
+
+    if [[ "$confirm" =~ ^[Ss]$ ]]; then
+        run_rish "reboot"
+    else
+        echo "Operación cancelada."
+        sleep 2
     fi
 }
 
 shutdown_device() {
-    echo
-    read -p "¿Apagar el teléfono? [s/N]: " confirmar
+    clear
 
-    if [[ "$confirmar" == "s" || "$confirmar" == "S" ]]; then
-        echo "Apagando..."
-        sleep 1
-        $RISH -c "reboot -p"
+    echo "=== APAGAR TELÉFONO ==="
+    echo
+
+    read -p "¿Seguro que querés apagar? [s/N]: " confirm
+
+    if [[ "$confirm" =~ ^[Ss]$ ]]; then
+        run_rish "reboot -p"
+    else
+        echo "Operación cancelada."
+        sleep 2
     fi
 }
