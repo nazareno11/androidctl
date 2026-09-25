@@ -1,0 +1,58 @@
+#!/bin/bash
+
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+source "$BASE_DIR/config/config.sh"
+source "$BASE_DIR/commands/system.sh"
+source "$BASE_DIR/commands/power.sh"
+source "$BASE_DIR/commands/display.sh"
+
+while true; do
+    clear
+
+    echo "╔══════════════════════════════════╗"
+    echo "║           ANDROIDCTL             ║"
+    echo "╠══════════════════════════════════╣"
+    echo "║  1. Información del teléfono    ║"
+    echo "║  2. Información de pantalla     ║"
+    echo "║  3. Brillo actual               ║"
+    echo "║  4. Bloquear pantalla           ║"
+    echo "║  5. Reiniciar                   ║"
+    echo "║  6. Apagar                      ║"
+    echo "║  0. Salir                       ║"
+    echo "╚══════════════════════════════════╝"
+    echo
+
+    read -p "Seleccioná una opción: " opcion
+
+    case "$opcion" in
+        1)
+            system_info
+            ;;
+        2)
+            display_info
+            ;;
+        3)
+            display_brightness
+            ;;
+        4)
+            lock_screen
+            ;;
+        5)
+            reboot_device
+            ;;
+        6)
+            shutdown_device
+            ;;
+        0)
+            clear
+            echo "Saliendo de AndroidCTL..."
+            exit 0
+            ;;
+        *)
+            echo
+            echo "Opción inválida."
+            sleep 1
+            ;;
+    esac
+done
