@@ -6,6 +6,7 @@ source "$BASE_DIR/config/config.sh"
 source "$BASE_DIR/commands/system.sh"
 source "$BASE_DIR/commands/power.sh"
 source "$BASE_DIR/commands/display.sh"
+source "$BASE_DIR/commands/battery.sh"
 
 while true; do
     clear
@@ -13,13 +14,14 @@ while true; do
     echo "╔══════════════════════════════════╗"
     echo "║           ANDROIDCTL             ║"
     echo "╠══════════════════════════════════╣"
-    echo "║  1. Información del teléfono    ║"
-    echo "║  2. Información de pantalla     ║"
-    echo "║  3. Brillo actual               ║"
-    echo "║  4. Bloquear pantalla           ║"
-    echo "║  5. Reiniciar                   ║"
-    echo "║  6. Apagar                      ║"
-    echo "║  0. Salir                       ║"
+    echo "║  1. Información del teléfono     ║"
+    echo "║  2. Información de pantalla      ║"
+    echo "║  3. Brillo actual                ║"
+    echo "║  4. Batería                      ║"
+    echo "║  5. Bloquear pantalla            ║"
+    echo "║  6. Reiniciar                    ║"
+    echo "║  7. Apagar                       ║"
+    echo "║  0. Salir                        ║"
     echo "╚══════════════════════════════════╝"
     echo
 
@@ -36,12 +38,15 @@ while true; do
             display_brightness
             ;;
         4)
-            lock_screen
+            battery_info
             ;;
         5)
-            reboot_device
+            lock_screen
             ;;
         6)
+            reboot_device
+            ;;
+        7)
             shutdown_device
             ;;
         0)
