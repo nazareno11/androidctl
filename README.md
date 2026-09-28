@@ -1,6 +1,6 @@
 # AndroidCTL
 
-Herramienta de terminal para controlar y consultar un dispositivo Android mediante Termux y Shizuku, sin necesidad de acceso root.
+Herramienta de terminal para controlar y consultar un dispositivo Android mediante Termux y Shizuku.
 
 
 
