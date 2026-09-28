@@ -7,6 +7,7 @@ source "$BASE_DIR/commands/system.sh"
 source "$BASE_DIR/commands/power.sh"
 source "$BASE_DIR/commands/display.sh"
 source "$BASE_DIR/commands/battery.sh"
+source "$BASE_DIR/commands/stats.sh"
 
 while true; do
     clear
@@ -18,9 +19,10 @@ while true; do
     echo "║  2. Información de pantalla      ║"
     echo "║  3. Brillo actual                ║"
     echo "║  4. Batería                      ║"
-    echo "║  5. Bloquear pantalla            ║"
-    echo "║  6. Reiniciar                    ║"
-    echo "║  7. Apagar                       ║"
+    echo "║  5. Estadisticas                 ║"
+    echo "║  6. Bloquear pantalla            ║"
+    echo "║  7. Reiniciar                    ║"
+    echo "║  8. Apagar                       ║"
     echo "║  0. Salir                        ║"
     echo "╚══════════════════════════════════╝"
     echo
@@ -41,12 +43,15 @@ while true; do
             battery_info
             ;;
         5)
+            stats_info
+            ;;    
+        6)
             lock_screen
             ;;
-        6)
+        7)
             reboot_device
             ;;
-        7)
+        8)
             shutdown_device
             ;;
         0)
